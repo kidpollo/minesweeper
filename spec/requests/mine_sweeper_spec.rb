@@ -29,7 +29,7 @@ feature "Mine Sweeper Landing Page", %q{
     fill_in('board_mines', :with => '5')
     fill_in('board_name', :with => 'super game')
     click_button('Create Game')
-    current_path.should == '/super_game'
+    current_path.should == '/1-super-game'
   end
 
 end
