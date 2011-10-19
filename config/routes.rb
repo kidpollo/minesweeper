@@ -1,6 +1,7 @@
 MineSweeper::Application.routes.draw do
   resources :boards
-  
+  match '/:id' => 'boards#show', :constraints => { :id => /.+/ }, :as => 'game'
+
   root :to => 'boards#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
