@@ -17,9 +17,9 @@ feature "Mine Sweeper Landing Page", %q{
   scenario "Should be able to create new game" do 
     page.should have_content('New Game:')
     page.should have_field('Name')
-    page.should have_field('x')
-    page.should have_field('y')
-    page.should have_field('mines')
+    page.should have_field('X')
+    page.should have_field('Y')
+    page.should have_field('Mines')
     page.should have_button('Create Game')
   end
 
