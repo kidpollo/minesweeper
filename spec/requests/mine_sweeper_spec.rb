@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "Mine Sweeper Landing Page", %q{
-  In order to have a player loose a lot of productive time
+  Check the game out
   As a player
   I want to create and manage games
 } do
@@ -10,7 +10,7 @@ feature "Mine Sweeper Landing Page", %q{
     visit '/'
   end
 
-  scenario "Boards index welcom" do
+  scenario "Boards index welcome" do
     page.should have_content('Welcome to Mine Sweeper')
   end
 
