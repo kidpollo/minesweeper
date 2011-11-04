@@ -1,0 +1,11 @@
+<h2>Welcome to Mine Sweeper</h2>
+
+<h3>New Game:</h3>
+
+<%= form_for @board do |b| %>
+  <%= b.text_field :name %>
+  <%= b.text_field :x %>
+  <%= b.text_field :y %>
+  <%= b.text_field :mines %>
+  <%= b.submit 'Create Game' %>
+<% end %>

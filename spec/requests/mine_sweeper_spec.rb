@@ -16,20 +16,20 @@ feature "Mine Sweeper Landing Page", %q{
 
   scenario "Should be able to create new game" do 
     page.should have_content('New Game:')
-    page.should have_field('Name')
-    page.should have_field('x')
-    page.should have_field('y')
-    page.should have_field('mines')
+    page.should have_field('board_name')
+    page.should have_field('board_x')
+    page.should have_field('board_y')
+    page.should have_field('board_mines')
     page.should have_button('Create Game')
   end
 
   scenario 'Should be able to create new game' do
-    fill_in('x', :with => '5')
-    fill_in('y', :with => '5')
-    fill_in('mines', :with => '5')
-    fill_in('Name', :with => 'super game')
+    fill_in('board_x', :with => '5')
+    fill_in('board_y', :with => '5')
+    fill_in('board_mines', :with => '5')
+    fill_in('board_name', :with => 'super game')
     click_button('Create Game')
-    current_path.should == '/super_game'
+    current_path.should == '/boards/super_game'
   end
 
 end
@@ -41,9 +41,9 @@ feature "Mine Sweeprer Game", %q{
 } do
 
   background do
-    @board = Board.create!({:x => 5, :y => 5, :mines => 5, :sample_game => 'sample_game'})
+    @board = Board.create!({:x => 5, :y => 5, :mines => 5, :name => 'sample_game'})
     @board.set_mine(1,1)
-    visit '/sample_game'
+    visit '/boards/sample_game'
   end
 
   scenario 'Should prompt for first move' do

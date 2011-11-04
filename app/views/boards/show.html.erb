@@ -1,0 +1,8 @@
+<h2>Do your first move!</h2>
+
+<%= @board.y.times do |id_y| %>
+  <%= @board.x.times do |id_x| %>
+    <a ><%= "##{id_x}_##{id_y}" %></a>
+  <% end %>
+<% end %>
+  
