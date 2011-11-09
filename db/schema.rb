@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111109004952) do
+ActiveRecord::Schema.define(:version => 20111109012406) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
     t.integer  "x"
     t.integer  "y"
-    t.integer  "mines"
+    t.integer  "max_mines"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mines", :force => true do |t|
+    t.integer  "board_id"
+    t.integer  "x"
+    t.integer  "y"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

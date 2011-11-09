@@ -10,6 +10,7 @@ class MinesweeperController < ApplicationController
   end
   
   def show
+    @board = Board.find_by_name(params[:name])
     
   end
 end

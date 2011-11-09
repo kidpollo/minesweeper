@@ -1,0 +1,7 @@
+<p>Do your first move!</p>
+
+<% @board.x.times do |x| %>
+    <% @board.y.times do |y| %>
+      <a href="#" id="<%= x %>_<%= y %>">Square</a>
+    <% end %>
+<% end %>

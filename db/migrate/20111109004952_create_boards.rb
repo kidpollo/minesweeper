@@ -4,7 +4,7 @@ class CreateBoards < ActiveRecord::Migration
       t.string :name
       t.integer :x
       t.integer :y
-      t.integer :mines
+      t.integer :max_mines
 
       t.timestamps
     end
