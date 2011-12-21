@@ -1,4 +1,10 @@
 MineSweeper::Application.routes.draw do
+  resources :games
+  
+  root :to => 'games#new'
+  
+  match '/:name' => 'games#edit', :as => :named_game
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

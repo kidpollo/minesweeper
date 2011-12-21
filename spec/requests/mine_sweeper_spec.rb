@@ -17,16 +17,16 @@ feature "Mine Sweeper Landing Page", %q{
   scenario "Should be able to create new game" do 
     page.should have_content('New Game:')
     page.should have_field('Name')
-    page.should have_field('x')
-    page.should have_field('y')
-    page.should have_field('mines')
+    page.should have_field('X')
+    page.should have_field('Y')
+    page.should have_field('Mines')
     page.should have_button('Create Game')
   end
 
   scenario 'Should be able to create new game' do
-    fill_in('x', :with => '5')
-    fill_in('y', :with => '5')
-    fill_in('mines', :with => '5')
+    fill_in('X', :with => '5')
+    fill_in('Y', :with => '5')
+    fill_in('Mines', :with => '5')
     fill_in('Name', :with => 'super game')
     click_button('Create Game')
     current_path.should == '/super_game'
@@ -35,13 +35,13 @@ feature "Mine Sweeper Landing Page", %q{
 end
 
 feature "Mine Sweeprer Game", %q{
-  In order to have a player loose a lot of productive time
+  In order to have a player lose a lot of productive time
   As a player
   I want to play the game
 } do
 
   background do
-    @board = Board.create!({:x => 5, :y => 5, :mines => 5, :sample_game => 'sample_game'})
+    @board = Game.create!({:x => 5, :y => 5, :mines => 5, :name => 'sample_game'})
     @board.set_mine(1,1)
     visit '/sample_game'
   end
